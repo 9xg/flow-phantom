@@ -120,13 +120,13 @@ dlm3i = fitlm(icgConcentrationList(1:9),clarioStarMeans(1:9),'Intercept',false);
 cmap = repmat(lines(3),2,1);
 figure;hold on;
 plot(icgConcentrationList,msotDefaultMeans,'*',icgConcentrationList,flowSpectrometerMeans,'*',icgConcentrationList,clarioStarMeans,'*');
-plot(dlm1.predict([0:100]'),'-')
-plot(dlm2.predict([0:100]'),'-')
-plot(dlm3.predict([0:100]'),'-')
+plot(dlm1.predict([0:37.5]'),'-')
+plot(dlm2.predict([0:37.5]'),'-')
+plot(dlm3.predict([0:37.5]'),'-')
 hold off;
 plt = Plot(); % create a Plot object and grab the current figure
 plt.XLabel = 'Indocyanine green concentration [µM]'; % xlabel
-plt.YLabel = 'Spectrally unmixed PAI intensity [a.u.]'; %ylabel
+plt.YLabel = 'Spectrally unmixed ICG PAI intensity [a.u.]'; %ylabel
 plt.BoxDim = [5 5];
 plt.YLim = [0 3300];
 %plt.XLim = [500 950];
@@ -135,12 +135,12 @@ plt.FontSize = 14;
 plt.ShowBox = false;
 plt.Colors = num2cell(cmap,2);
 plt.TickDir = 'out';
-plt.Legend = {'MSOT vendor spectrum','Online flow spectrum','Offline spectrum',['LM vendor spectrum, R²=' num2str(round(dlm1.Rsquared.Adjusted,3))],['LM flow spectrum, R²=' num2str(round(dlm2.Rsquared.Adjusted,3))],['LM offline spectrum, R²=' num2str(round(dlm3.Rsquared.Adjusted,3))]}
+plt.Legend = {'Literature spectrum','Online flow spectrum','Offline spectrum',['LM literature spectrum, R²=' num2str(round(dlm1.Rsquared.Adjusted,3))],['LM flow spectrum, R²=' num2str(round(dlm2.Rsquared.Adjusted,3))],['LM offline spectrum, R²=' num2str(round(dlm3.Rsquared.Adjusted,3))]}
 plt.LegendLoc = 'SouthEast'
 plt.LegendBox = true;
 plt.TickLength = [0.01 0.01];
 plt.LineWidth = [2.5 2.5 2.5 1.5];
-plt.LineStyle = {'-','-','-','-.'};
+plt.LineStyle = {'none','none','none','-'};
 set(gca, 'Layer', 'Top');
 rectangle('Position',[37.5 1700 62.5 1600], 'FaceColor', [0.7 0 0 0.075],'LineStyle','none');
 text(65,2000,'Non-linear','Color',[0.7 0.5 0.5],'FontSize',12,'FontWeight','bold');
@@ -162,7 +162,7 @@ plot(icgConcentrationList,msotDefaultMeans,'*',icgConcentrationList,flowSpectrom
 hold off;
 plt = Plot(); % create a Plot object and grab the current figure
 plt.XLabel = 'Indocyanine green concentration [µM]'; % xlabel
-plt.YLabel = 'Spectrally unmixed PAI intensity [a.u.]'; %ylabel
+plt.YLabel = 'Spectrally unmixed ICG PAI intensity [a.u.]'; %ylabel
 plt.BoxDim = [5 5];
 plt.YLim = [0 3300];
 %plt.XLim = [500 950];
@@ -171,12 +171,12 @@ plt.FontSize = 14;
 plt.ShowBox = false;
 plt.Colors = num2cell(cmap,2);
 plt.TickDir = 'out';
-plt.Legend = {'MSOT (literature) spectrum','Online flow spectrum','Offline spectrum',['LM vendor spectrum, R²=' num2str(round(dlm1.Rsquared.Adjusted,3))],['LM flow spectrum, R²=' num2str(round(dlm2.Rsquared.Adjusted,3))],['LM offline spectrum, R²=' num2str(round(dlm3.Rsquared.Adjusted,3))]}
+plt.Legend = {'Literature spectrum','Online flow spectrum','Offline spectrum',['LM literature spectrum, R²=' num2str(round(dlm1.Rsquared.Adjusted,3))],['LM flow spectrum, R²=' num2str(round(dlm2.Rsquared.Adjusted,3))],['LM offline spectrum, R²=' num2str(round(dlm3.Rsquared.Adjusted,3))]}
 plt.LegendLoc = 'SouthEast'
 plt.LegendBox = true;
 plt.TickLength = [0.01 0.01];
 plt.LineWidth = [2.5 2.5 2.5 1.5];
-plt.LineStyle = {'-','-','-','-.'};
+plt.LineStyle = {'none','none','none','-'};
 set(gca, 'Layer', 'Top');
 %rectangle('Position',[37.5 1700 62.5 1600], 'FaceColor', [0.7 0 0 0.075],'LineStyle','none');
 %text(65,2000,'Non-linear','Color',[0.7 0.5 0.5],'FontSize',12,'FontWeight','bold');
@@ -302,7 +302,7 @@ legend(plots(newOrder),legendLabels(newOrder));
 
 plt = Plot(); % create a Plot object and grab the current figure
 plt.XLabel = 'Distance from tube centre [mm]'; % xlabel
-plt.YLabel = 'Spectrally unmixed PAI intensity [a.u.]'; %ylabel
+plt.YLabel = 'Spectrally unmixed ICG PAI intensity [a.u.]'; %ylabel
 %plt.Title = 'MSOT default radial profile';
 plt.BoxDim = [5 5];
 plt.YLim = [0 3700];
@@ -336,7 +336,7 @@ legend(plots(newOrder),legendLabels(newOrder));
 
 plt = Plot(); % create a Plot object and grab the current figure
 plt.XLabel = 'Distance from tube centre [mm]'; % xlabel
-plt.YLabel = 'Spectrally unmixed PAI intensity [a.u.]'; %ylabel
+plt.YLabel = 'Spectrally unmixed ICG PAI intensity [a.u.]'; %ylabel
 %plt.Title = 'Flow spec radial profile';
 plt.BoxDim = [5 5];
 plt.YLim = [0 3400];
@@ -369,7 +369,7 @@ legend(plots(newOrder),legendLabels(newOrder));
 
 plt = Plot(); % create a Plot object and grab the current figure
 plt.XLabel = 'Distance from tube centre [mm]'; % xlabel
-plt.YLabel = 'Spectrally unmixed PAI intensity [a.u.]'; %ylabel
+plt.YLabel = 'Spectrally unmixed ICG PAI intensity [a.u.]'; %ylabel
 %plt.Title = 'Clario Star radial profile';
 plt.BoxDim = [5 5];
 plt.YLim = [0 3300];

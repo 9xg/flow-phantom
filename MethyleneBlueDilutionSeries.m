@@ -196,7 +196,7 @@ plot(dlm3.predict([1:100]'),'-')
 hold off;
 plt = Plot(); % create a Plot object and grab the current figure
 plt.XLabel = 'Methylene blue concentration [µM]'; % xlabel
-plt.YLabel = 'Spectrally unmixed PAI intensity [a.u.]'; %ylabel
+plt.YLabel = 'Spectrally unmixed MB PAI intensity [a.u.]'; %ylabel
 plt.BoxDim = [5 5];
 plt.YLim = [0 1300];
 %plt.XLim = [500 950];
@@ -205,12 +205,12 @@ plt.FontSize = 14;
 plt.ShowBox = false;
 plt.Colors = num2cell(cmap,2);
 plt.TickDir = 'out';
-plt.Legend = {'MSOT vendor spectrum','Online flow spectrum','Offline spectrum',['LM vendor spectrum, R²=' num2str(round(dlm1.Rsquared.Adjusted,3))],['LM flow spectrum, R²=' num2str(round(dlm2.Rsquared.Adjusted,3))],['LM offline spectrum, R²=' num2str(round(dlm3.Rsquared.Adjusted,3))]}
+plt.Legend = {'Literature spectrum','Online flow spectrum','Offline spectrum',['LM literature spectrum, R²=' num2str(round(dlm1.Rsquared.Adjusted,3))],['LM flow spectrum, R²=' num2str(round(dlm2.Rsquared.Adjusted,3))],['LM offline spectrum, R²=' num2str(round(dlm3.Rsquared.Adjusted,3))]}
 plt.LegendLoc = 'SouthEast'
 plt.LegendBox = true;
 plt.TickLength = [0.01 0.01];
 plt.LineWidth = [2.5 2.5 2.5 1.5];
-plt.LineStyle = {'-','-','-','-.'};
+plt.LineStyle = {'none','none','none','-'};
 set(gca, 'Layer', 'Top');
 %rectangle('Position',[250 2000 250 1200], 'FaceColor', [0.7 0 0 0.075],'LineStyle','none');
 %text(330,2150,'Non-linear','Color',[0.7 0.5 0.5],'FontSize',12,'FontWeight','bold');
@@ -236,7 +236,7 @@ plot(mbConcentrationList,msotDefaultMeans,'*',mbConcentrationList,flowSpectromet
 hold off;
 plt = Plot(); % create a Plot object and grab the current figure
 plt.XLabel = 'Methylene blue concentration [µM]'; % xlabel
-plt.YLabel = 'Spectrally unmixed PAI intensity [a.u.]'; %ylabel
+plt.YLabel = 'Spectrally unmixed MB PAI intensity [a.u.]'; %ylabel
 plt.BoxDim = [5 5];
 plt.YLim = [0 1300];
 %plt.XLim = [500 950];
@@ -405,7 +405,7 @@ legend(plots(newOrder),legendLabels(newOrder));
 
 plt = Plot(); % create a Plot object and grab the current figure
 plt.XLabel = 'Distance from tube centre [µm]'; % xlabel
-plt.YLabel = 'Spectrally unmixed PAI intensity [a.u.]'; %ylabel
+plt.YLabel = 'Spectrally unmixed MB PAI intensity [a.u.]'; %ylabel
 %plt.Title = 'MSOT default radial profile';
 plt.BoxDim = [5 5];
 plt.YLim = [0 3300];
@@ -439,7 +439,7 @@ legend(plots(newOrder),legendLabels(newOrder));
 
 plt = Plot(); % create a Plot object and grab the current figure
 plt.XLabel = 'Distance from tube centre [mm]'; % xlabel
-plt.YLabel = 'Spectrally unmixed PAI intensity [a.u.]'; %ylabel
+plt.YLabel = 'Spectrally unmixed MB PAI intensity [a.u.]'; %ylabel
 %plt.Title = 'Flow spec radial profile';
 plt.BoxDim = [5 5];
 plt.YLim = [0 3300];
@@ -472,7 +472,7 @@ legend(plots(newOrder),legendLabels(newOrder));
 
 plt = Plot(); % create a Plot object and grab the current figure
 plt.XLabel = 'Distance from tube centre [mm]'; % xlabel
-plt.YLabel = 'Spectrally unmixed PAI intensity [a.u.]'; %ylabel
+plt.YLabel = 'Spectrally unmixed MB PAI intensity [a.u.]'; %ylabel
 %plt.Title = 'Clario Star radial profile';
 plt.BoxDim = [5 5];
 plt.YLim = [0 3300];
