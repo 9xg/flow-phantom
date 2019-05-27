@@ -285,7 +285,7 @@ plt.LineStyle = lineStyle;
 plt.LineWidth = 2.5;
 set(gca, 'Layer', 'Top');
 rectangle('Position',[0 0 660 1.2], 'FaceColor', [0 0 0 0.075],'LineStyle','none');
-text(890,0.51,'in µM','Color',[0 0 0],'FontSize',11,'FontWeight','bold');
+text(890,0.385,'in µM','Color',[0 0 0],'FontSize',11,'FontWeight','bold');
 %text(813,0.3,'MSR','Color',[0.5 0.5 0.5],'FontSize',12,'FontWeight','bold');
 plt.export('figure-raw-drafts/MethyleneBlue-DS-FlowSpectrometer.pdf');
 %plt.Title = 'Voltage as a function of time'; % plot title
