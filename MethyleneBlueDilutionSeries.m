@@ -31,8 +31,8 @@ flowSpectrometerMethyleneBlue.spec.mean(:,10) = flowSpectrometerMethyleneBlue.sp
 
 %%
 wavelengths=[660,664,680,684,694,700,708,715,730,735,760,770,775,779,800,850,950];
-mbConcentrationList = [0,2.5,5,10,18.75,37.5,50,75,100,175,250,500];
-
+mbConcentrationList = [0,2.5,5,10,18.75,37.5,50,75,100];
+%mbConcentrationList = [0,2.5,5,10,18.75,37.5,50,75,100,175,250,500];
 %figure; hold on;
 msotSpectra = [];
 msotDefaultMeans=[];
@@ -176,13 +176,13 @@ end
 %hold off;
 %%
 
-dlm1 = fitlm(mbConcentrationList(1:11),msotDefaultMeans(1:11));
-dlm2 = fitlm(mbConcentrationList(1:11),flowSpectrometerMeans(1:11));
-dlm3 = fitlm(mbConcentrationList(1:11),clarioStarMeans(1:11));
+dlm1 = fitlm(mbConcentrationList(1:9),msotDefaultMeans(1:9));
+dlm2 = fitlm(mbConcentrationList(1:9),flowSpectrometerMeans(1:9));
+dlm3 = fitlm(mbConcentrationList(1:9),clarioStarMeans(1:9));
 
-dlm1i = fitlm(mbConcentrationList(1:11),msotDefaultMeans(1:11),'Intercept',false);
-dlm2i = fitlm(mbConcentrationList(1:11),flowSpectrometerMeans(1:11),'Intercept',false);
-dlm3i = fitlm(mbConcentrationList(1:11),clarioStarMeans(1:11),'Intercept',false);
+dlm1i = fitlm(mbConcentrationList(1:9),msotDefaultMeans(1:9),'Intercept',false);
+dlm2i = fitlm(mbConcentrationList(1:9),flowSpectrometerMeans(1:9),'Intercept',false);
+dlm3i = fitlm(mbConcentrationList(1:9),clarioStarMeans(1:9),'Intercept',false);
 
 
 
@@ -190,15 +190,15 @@ cmap = lines(3);
 cmap = [cmap;cmap]
 figure;hold on;
 plot(mbConcentrationList,msotDefaultMeans,'*',mbConcentrationList,flowSpectrometerMeans,'*',mbConcentrationList,clarioStarMeans,'*');
-plot(dlm1.predict([1:500]'),'-')
-plot(dlm2.predict([1:500]'),'-')
-plot(dlm3.predict([1:500]'),'-')
+plot(dlm1.predict([1:100]'),'-')
+plot(dlm2.predict([1:100]'),'-')
+plot(dlm3.predict([1:100]'),'-')
 hold off;
 plt = Plot(); % create a Plot object and grab the current figure
 plt.XLabel = 'Methylene blue concentration [µM]'; % xlabel
-plt.YLabel = 'Spectrally unmixed MSOT intensity [a.u.]'; %ylabel
+plt.YLabel = 'Spectrally unmixed PAI intensity [a.u.]'; %ylabel
 plt.BoxDim = [5 5];
-plt.YLim = [0 3200];
+plt.YLim = [0 1300];
 %plt.XLim = [500 950];
 plt.FontName = 'Arial';
 plt.FontSize = 14;
@@ -212,19 +212,19 @@ plt.TickLength = [0.01 0.01];
 plt.LineWidth = [2.5 2.5 2.5 1.5];
 plt.LineStyle = {'-','-','-','-.'};
 set(gca, 'Layer', 'Top');
-rectangle('Position',[250 2000 250 1200], 'FaceColor', [0.7 0 0 0.075],'LineStyle','none');
-text(330,2150,'Non-linear','Color',[0.7 0.5 0.5],'FontSize',12,'FontWeight','bold');
+%rectangle('Position',[250 2000 250 1200], 'FaceColor', [0.7 0 0 0.075],'LineStyle','none');
+%text(330,2150,'Non-linear','Color',[0.7 0.5 0.5],'FontSize',12,'FontWeight','bold');
 plt.export('figure-raw-drafts/MethyleneBlue-DS-Unmixing-Comparison.pdf');
 
 %%
 
-dlm1 = fitlm(mbConcentrationList(1:11),msotDefaultMeans(1:11));
-dlm2 = fitlm(mbConcentrationList(1:11),flowSpectrometerMeans(1:11));
-dlm3 = fitlm(mbConcentrationList(1:11),clarioStarMeans(1:11));
+dlm1 = fitlm(mbConcentrationList(1:9),msotDefaultMeans(1:9));
+dlm2 = fitlm(mbConcentrationList(1:9),flowSpectrometerMeans(1:9));
+dlm3 = fitlm(mbConcentrationList(1:9),clarioStarMeans(1:9));
 
-dlm1i = fitlm(mbConcentrationList(1:11),msotDefaultMeans(1:11),'Intercept',false);
-dlm2i = fitlm(mbConcentrationList(1:11),flowSpectrometerMeans(1:11),'Intercept',false);
-dlm3i = fitlm(mbConcentrationList(1:11),clarioStarMeans(1:11),'Intercept',false);
+dlm1i = fitlm(mbConcentrationList(1:9),msotDefaultMeans(1:9),'Intercept',false);
+dlm2i = fitlm(mbConcentrationList(1:9),flowSpectrometerMeans(1:9),'Intercept',false);
+dlm3i = fitlm(mbConcentrationList(1:9),clarioStarMeans(1:9),'Intercept',false);
 
 
 
@@ -236,9 +236,9 @@ plot(mbConcentrationList,msotDefaultMeans,'*',mbConcentrationList,flowSpectromet
 hold off;
 plt = Plot(); % create a Plot object and grab the current figure
 plt.XLabel = 'Methylene blue concentration [µM]'; % xlabel
-plt.YLabel = 'Spectrally unmixed MSOT intensity [a.u.]'; %ylabel
+plt.YLabel = 'Spectrally unmixed PAI intensity [a.u.]'; %ylabel
 plt.BoxDim = [5 5];
-plt.YLim = [0 3200];
+plt.YLim = [0 1300];
 %plt.XLim = [500 950];
 plt.FontName = 'Arial';
 plt.FontSize = 14;
@@ -255,7 +255,7 @@ set(gca, 'Layer', 'Top');
 plt.export('figure-raw-drafts/MethyleneBlue-DS-Unmixing-Comparison-Talk-Version.pdf');
 
 %%
-lineStyle = {'-',':','-.','-',':','-.','-',':','-.','-',':','-.'}
+lineStyle = {'-',':','-.','-',':','-.','-',':','-.'}
 figure;hold on;
 cmap = colorGradient([183/255 198/255 255/255],[23/255 39/255 115/255],12);
 for k=1:length(mbConcentrationList)
@@ -266,14 +266,14 @@ hold off;
 %title('Flow Spectrometer')
 plots = flipud(get(gca, 'children'));
 legendLabels = strcat(strsplit(num2str(mbConcentrationList)));
-newOrder = flip(1:12,2);
+newOrder = flip(1:9,2);
 legend(plots(newOrder),legendLabels(newOrder));
 
 plt = Plot(); % create a Plot object and grab the current figure
 plt.XLabel = 'Wavelength [nm]'; % xlabel
 plt.YLabel = 'Absorbance [a.u.]'; %ylabel
 plt.BoxDim = [5 5];
-plt.YLim = [0 1.2];
+plt.YLim = [0 0.7];
 plt.XLim = [500 950];
 plt.FontName = 'Arial';
 plt.FontSize = 14;
@@ -290,7 +290,7 @@ text(890,0.51,'in µM','Color',[0 0 0],'FontSize',11,'FontWeight','bold');
 plt.export('figure-raw-drafts/MethyleneBlue-DS-FlowSpectrometer.pdf');
 %plt.Title = 'Voltage as a function of time'; % plot title
 %%
-lineStyle = {'-',':','-.','-',':','-.','-',':','-.','-',':','-.'}
+lineStyle = {'-',':','-.','-',':','-.','-',':','-.'}
 figure;hold on;
 cmap = colorGradient([183/255 198/255 255/255],[23/255 39/255 115/255],12);
 for k=1:length(mbConcentrationList)
@@ -302,7 +302,7 @@ hold off;
 %title('Flow Spectrometer')
 plots = flipud(get(gca, 'children'));
 legendLabels = strcat(strsplit(num2str(mbConcentrationList)));
-newOrder = flip(1:12,2);
+newOrder = flip(1:9,2);
 legend(plots(newOrder),legendLabels(newOrder));
 
 plt = Plot(); % create a Plot object and grab the current figure
@@ -327,7 +327,7 @@ line('XData', [550 700], 'YData', [7.1 7.1],'Color','r','LineWidth',2,'HandleVis
 text(540,7.3,'Spectrometer saturation','Color','r','FontSize',11,'FontWeight','bold');
 plt.export('figure-raw-drafts/MethyleneBlue-DS-ClarioStar.pdf');
 %% MSOT plot 
-lineStyle = {'-',':','-.','-',':','-.','-',':','-.','-',':','-.'}
+lineStyle = {'-',':','-.','-',':','-.','-',':','-.'}
 figure;hold on;
 cmap = colorGradient([183/255 198/255 255/255],[23/255 39/255 115/255],12);
 for k=1:length(mbConcentrationList)
@@ -338,14 +338,14 @@ hold off;
 %title('Flow Spectrometer')
 plots = flipud(get(gca, 'children'));
 legendLabels = strcat(strsplit(num2str(mbConcentrationList)));
-newOrder = flip(1:12,2);
+newOrder = flip(1:9,2);
 legend(plots(newOrder),legendLabels(newOrder));
 
 plt = Plot(); % create a Plot object and grab the current figure
 plt.XLabel = 'Wavelength [nm]'; % xlabel
-plt.YLabel = 'MSOT intensity [a.u.]'; %ylabel
+plt.YLabel = 'PAI intensity [a.u.]'; %ylabel
 plt.BoxDim = [5 5];
-plt.YLim = [0 2500];
+plt.YLim = [0 3000];
 plt.XLim = [500 950];
 plt.FontName = 'Arial';
 plt.FontSize = 14;
@@ -356,8 +356,8 @@ plt.TickLength = [0.01 0.01]
 plt.LineStyle = lineStyle;
 plt.LineWidth = 2.5;
 set(gca, 'Layer', 'Top');
-rectangle('Position',[0 0 660 2500], 'FaceColor', [0 0 0 0.075],'LineStyle','none');
-text(890,1080,'in µM','Color',[0 0 0],'FontSize',11,'FontWeight','bold');
+rectangle('Position',[0 0 660 3000], 'FaceColor', [0 0 0 0.075],'LineStyle','none');
+text(890,1650,'in µM','Color',[0 0 0],'FontSize',11,'FontWeight','bold');
 %text(840,700.0,'MSR','Color',[0.5 0.5 0.5],'FontSize',12,'FontWeight','bold');
 plt.export('figure-raw-drafts/MethyleneBlue-DS-MSOT.pdf');
 %plt.Title = 'Voltage as a function of time'; % plot title
@@ -400,12 +400,12 @@ end
 hold off;
 plots = flipud(get(gca, 'children'));
 legendLabels = strcat(strsplit(num2str(mbConcentrationList)));
-newOrder = flip(1:12,2);
+newOrder = flip(1:9,2);
 legend(plots(newOrder),legendLabels(newOrder));
 
 plt = Plot(); % create a Plot object and grab the current figure
 plt.XLabel = 'Distance from tube centre [µm]'; % xlabel
-plt.YLabel = 'Spectrally unmixed MSOT intensity [a.u.]'; %ylabel
+plt.YLabel = 'Spectrally unmixed PAI intensity [a.u.]'; %ylabel
 %plt.Title = 'MSOT default radial profile';
 plt.BoxDim = [5 5];
 plt.YLim = [0 3300];
@@ -434,12 +434,12 @@ end
 hold off;
 plots = flipud(get(gca, 'children'));
 legendLabels = strcat(strsplit(num2str(mbConcentrationList)));
-newOrder = flip(1:12,2);
+newOrder = flip(1:9,2);
 legend(plots(newOrder),legendLabels(newOrder));
 
 plt = Plot(); % create a Plot object and grab the current figure
 plt.XLabel = 'Distance from tube centre [mm]'; % xlabel
-plt.YLabel = 'Spectrally unmixed MSOT intensity [a.u.]'; %ylabel
+plt.YLabel = 'Spectrally unmixed PAI intensity [a.u.]'; %ylabel
 %plt.Title = 'Flow spec radial profile';
 plt.BoxDim = [5 5];
 plt.YLim = [0 3300];
@@ -467,12 +467,12 @@ end
 hold off;
 plots = flipud(get(gca, 'children'));
 legendLabels = strcat(strsplit(num2str(mbConcentrationList)));
-newOrder = flip(1:12,2);
+newOrder = flip(1:9,2);
 legend(plots(newOrder),legendLabels(newOrder));
 
 plt = Plot(); % create a Plot object and grab the current figure
 plt.XLabel = 'Distance from tube centre [mm]'; % xlabel
-plt.YLabel = 'Spectrally unmixed MSOT intensity [a.u.]'; %ylabel
+plt.YLabel = 'Spectrally unmixed PAI intensity [a.u.]'; %ylabel
 %plt.Title = 'Clario Star radial profile';
 plt.BoxDim = [5 5];
 plt.YLim = [0 3300];
