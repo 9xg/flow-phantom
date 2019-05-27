@@ -57,7 +57,7 @@ for k=1:size(dataCollection,1)
     msotDefaultMeansSo2 = [];
     msotDefaultMeansCorrSo2 = [];
     
-    correctionSpectrum = interpolatedNigrosinSpectra(:,2)./interpolatedNigrosinSpectra(65,2)*dataCollection{k,4};
+    correctionSpectrum = interpolatedNigrosinSpectra(:,2)./max(interpolatedNigrosinSpectra(:,2))*dataCollection{k,4};
     
     
     
