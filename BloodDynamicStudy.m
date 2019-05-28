@@ -365,7 +365,7 @@ plt.YLabel = 'Blood oxygenation sO₂ [%]'; %ylabel
 %plt.Title = 'Clario Star radial profile';
 plt.BoxDim = [5 5];
 plt.YLim = [45 90];
-plt.XLim = [2 14].*0.0753;
+plt.XLim = [2 11].*0.0753;
 plt.FontName = 'Arial';
 plt.FontSize = 14;
 plt.ShowBox = false;
@@ -375,7 +375,7 @@ plt.TickLength = [0.01 0.01]
 %plt.LineStyle = lineStyle;
 plt.LineWidth = 2.5;
 
-rectangle('Position',[0 0 10*0.0753 3300], 'FaceColor', [0 0 0 0.075],'LineStyle','none');
+%rectangle('Position',[0 0 10*0.0753 3300], 'FaceColor', [0 0 0 0.075],'LineStyle','none');
 rectangle('Position',[10*0.0753 0 4*0.0753 3300], 'FaceColor', [0 0 0 0.15],'LineStyle','none');
 rectangle('Position',[11*0.0753 0 4*0.0753 3300], 'FaceColor', [1 1 1 0.9],'LineStyle','none');
 text(5*0.0753,3050,'Tube lumen','Color',[0.5 0.5 0.5],'FontSize',11,'FontWeight','bold');
