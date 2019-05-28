@@ -113,6 +113,29 @@ plt.LineStyle = {'-','-.'};
 plt.LineWidth = 2.5;
 set(gca, 'Layer', 'Top');
 plt.export('figure-raw-drafts/Blood-Dynamic-HbO2Hb-Flow.pdf');
+%%
+figure;
+plot(wavelengths,hbO2Unmixing./300,'r',wavelengths,hbUnmixing./300,'b',wavelengths,hbO2UnmixingFlow,'r',wavelengths,hbUnmixingFlow,'b');
+plots = flipud(get(gca, 'children'));
+legendLabels = {'Oxyhemoglobin (literature spectrum)','Deoxyhemoglobin (literature spectrum)','Oxyhemoglobin (online spectrum)','Deoxyhemoglobin (online spectrum)'};
+newOrder = flip(1:4,2);
+legend(plots(newOrder),legendLabels(newOrder));
+
+plt = Plot(); % create a Plot object and grab the current figure
+plt.XLabel = 'Wavelength [nm]'; % xlabel
+plt.YLabel = 'Absorption coefficient [a.u.]'; %ylabel
+plt.BoxDim = [5 5];
+plt.YLim = [0 7];
+plt.XLim = [660 850];
+plt.FontName = 'Arial';
+plt.FontSize = 12;
+plt.ShowBox = false;
+plt.TickDir = 'out';
+plt.TickLength = [0.01 0.01];
+plt.LineStyle = {'-','-','--','--'};
+plt.LineWidth = 2.5;
+set(gca, 'Layer', 'Top');
+plt.export('figure-raw-drafts/Blood-Dynamic-HbO2Hb-Flow-Combined.pdf');
 
 %%
 
