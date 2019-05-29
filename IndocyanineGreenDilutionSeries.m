@@ -142,8 +142,8 @@ plt.TickLength = [0.01 0.01];
 plt.LineWidth = [2.5 2.5 2.5 1.5];
 plt.LineStyle = {'none','none','none','-'};
 set(gca, 'Layer', 'Top');
-rectangle('Position',[37.5 1700 62.5 1600], 'FaceColor', [0.7 0 0 0.075],'LineStyle','none');
-text(65,2000,'Non-linear','Color',[0.7 0.5 0.5],'FontSize',12,'FontWeight','bold');
+%rectangle('Position',[37.5 1700 62.5 1600], 'FaceColor', [0.7 0 0 0.075],'LineStyle','none');
+%text(65,2000,'Non-linear','Color',[0.7 0.5 0.5],'FontSize',12,'FontWeight','bold');
 plt.export('figure-raw-drafts/IndocyanineGreen-DS-Unmixing-Comparison.pdf');
 
 %%

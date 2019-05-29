@@ -216,4 +216,44 @@ plt.XLabel = 'Phantoms with different background absorptions'; % xlabel
 plt.YLabel = 'Blood oxygenation sO₂ [%]'; %ylabel
 %set(gca, 'Layer', 'Top');
 %rectangle('Position',[7.5 0 1 1.1], 'FaceColor', [0 1 0 0.1],'LineStyle','none');
-plt.export('figure-raw-drafts/BackgroundBlood-Attenuation-Comparison.pdf');
+plt.export('figure-raw-drafts/BackgroundBlood-Attenuation-Comparison-Default.pdf');
+
+%%
+figure;hold on;
+ourbar = bar([1 1;2 2;3 3],[mean(so2Vals{1,3}(1:50).*100),mean(so2Vals{1,4}(1:50).*100);mean(so2Vals{3,3}(1:50).*100),mean(so2Vals{3,4}(1:50).*100);mean(so2Vals{4,3}(1:50).*100),mean(so2Vals{4,4}(1:50).*100)],'BarWidth',0.9)
+ourerror = errorbar(0.86,mean(so2Vals{1,3}(1:50).*100),std(so2Vals{1,3}(1:50).*100),'black','LineWidth',2, 'linestyle', 'none');
+errorbar(1.14,mean(so2Vals{1,4}(1:50).*100),std(so2Vals{1,4}(1:50).*100),'black','LineWidth',2, 'linestyle', 'none');
+errorbar(1.86,mean(so2Vals{3,3}(1:50).*100),std(so2Vals{3,3}(1:50).*100),'black','LineWidth',2, 'linestyle', 'none');
+errorbar(2.14,mean(so2Vals{3,4}(1:50).*100),std(so2Vals{3,4}(1:50).*100),'black','LineWidth',2, 'linestyle', 'none');
+errorbar(2.86,mean(so2Vals{4,3}(1:50).*100),std(so2Vals{4,3}(1:50).*100),'black','LineWidth',2, 'linestyle', 'none');
+errorbar(3.14,mean(so2Vals{4,4}(1:50).*100),std(so2Vals{4,4}(1:50).*100),'black','LineWidth',2, 'linestyle', 'none');
+hold off;
+ourbar(1).FaceColor = [.5 .5 .5]
+%ourerror.Color = [0 0 0]
+
+xtickangle(45)
+XTick=[0.86,1.14,1.86,2.14,2.86,3.14];
+set(gca, 'XTick',XTick);
+%set(gca,'TickLabelInterpreter','none')
+set(gca, 'XTickLabel', {'0 cm^{-1}','(corrected)','0.05 cm^{-1}','(corrected)','0.1 cm^{-1}','(corrected)'});
+line('XData', [0 5], 'YData', [81.7 81.7],'Color','r','LineWidth',2,'LineStyle','--','HandleVisibility','off');
+
+
+plt = Plot(); % create a Plot object and grab the current figure
+%plt.XLabel = 'Tubes (I.D. / O.D. in µm)'; % xlabel
+%plt.YLabel = 'Signal-to-background ratio [a.u.]'; %ylabel
+plt.XLim = [0.5 3.5]
+plt.YLim = [70 140]
+plt.BoxDim = [7 5];
+plt.LineWidth = 1.5;
+plt.FontName = 'Arial';
+plt.FontSize = 14;
+plt.TickDir = 'out';
+plt.TickLength = [0.01 0.01];
+plt.XMinorTick = false;
+plt.ShowBox = false;
+plt.XLabel = 'Phantoms with different background absorptions'; % xlabel
+plt.YLabel = 'Blood oxygenation sO₂ [%]'; %ylabel
+%set(gca, 'Layer', 'Top');
+%rectangle('Position',[7.5 0 1 1.1], 'FaceColor', [0 1 0 0.1],'LineStyle','none');
+plt.export('figure-raw-drafts/BackgroundBlood-Attenuation-Comparison-Online.pdf');
