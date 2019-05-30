@@ -214,6 +214,8 @@ plt.LineStyle = {'none','none','none','-'};
 set(gca, 'Layer', 'Top');
 %rectangle('Position',[250 2000 250 1200], 'FaceColor', [0.7 0 0 0.075],'LineStyle','none');
 %text(330,2150,'Non-linear','Color',[0.7 0.5 0.5],'FontSize',12,'FontWeight','bold');
+set(get(gca,'XLabel'),'FontWeight','bold','FontSize',15)
+set(get(gca,'YLabel'),'FontWeight','bold','FontSize',15)
 plt.export('figure-raw-drafts/MethyleneBlue-DS-Unmixing-Comparison.pdf');
 
 %%
@@ -252,6 +254,8 @@ plt.TickLength = [0.01 0.01];
 plt.LineWidth = [2.5 2.5 2.5 1.5];
 plt.LineStyle = {'-','-','-','-.'};
 set(gca, 'Layer', 'Top');
+set(get(gca,'XLabel'),'FontWeight','bold','FontSize',15)
+set(get(gca,'YLabel'),'FontWeight','bold','FontSize',15)
 plt.export('figure-raw-drafts/MethyleneBlue-DS-Unmixing-Comparison-Talk-Version.pdf');
 
 %%
@@ -287,6 +291,8 @@ set(gca, 'Layer', 'Top');
 rectangle('Position',[0 0 660 1.2], 'FaceColor', [0 0 0 0.075],'LineStyle','none');
 text(890,0.385,'in µM','Color',[0 0 0],'FontSize',11,'FontWeight','bold');
 %text(813,0.3,'MSR','Color',[0.5 0.5 0.5],'FontSize',12,'FontWeight','bold');
+set(get(gca,'XLabel'),'FontWeight','bold','FontSize',15)
+set(get(gca,'YLabel'),'FontWeight','bold','FontSize',15)
 plt.export('figure-raw-drafts/MethyleneBlue-DS-FlowSpectrometer.pdf');
 %plt.Title = 'Voltage as a function of time'; % plot title
 %%
@@ -325,6 +331,8 @@ text(890,3.0,'in µM','Color',[0 0 0],'FontSize',11,'FontWeight','bold');
 %text(820,2.0,'MSR','Color',[0.5 0.5 0.5],'FontSize',12,'FontWeight','bold');
 line('XData', [550 700], 'YData', [7.1 7.1],'Color','r','LineWidth',2,'HandleVisibility','off');
 text(540,7.3,'Spectrometer saturation','Color','r','FontSize',11,'FontWeight','bold');
+set(get(gca,'XLabel'),'FontWeight','bold','FontSize',15)
+set(get(gca,'YLabel'),'FontWeight','bold','FontSize',15)
 plt.export('figure-raw-drafts/MethyleneBlue-DS-ClarioStar.pdf');
 %% MSOT plot 
 lineStyle = {'-',':','-.','-',':','-.','-',':','-.'}
@@ -359,6 +367,8 @@ set(gca, 'Layer', 'Top');
 rectangle('Position',[0 0 660 3000], 'FaceColor', [0 0 0 0.075],'LineStyle','none');
 text(890,1650,'in µM','Color',[0 0 0],'FontSize',11,'FontWeight','bold');
 %text(840,700.0,'MSR','Color',[0.5 0.5 0.5],'FontSize',12,'FontWeight','bold');
+set(get(gca,'XLabel'),'FontWeight','bold','FontSize',15)
+set(get(gca,'YLabel'),'FontWeight','bold','FontSize',15)
 plt.export('figure-raw-drafts/MethyleneBlue-DS-MSOT.pdf');
 %plt.Title = 'Voltage as a function of time'; % plot title
 %%
@@ -390,6 +400,8 @@ set(gca, 'Layer', 'Top');
 rectangle('Position',[0 0 660 200000], 'FaceColor', [0 0 0 0.075],'LineStyle','none');
 %text(890,1080,'in µM','Color',[0 0 0],'FontSize',11,'FontWeight','bold');
 %text(840,700.0,'MSR','Color',[0.5 0.5 0.5],'FontSize',12,'FontWeight','bold');
+set(get(gca,'XLabel'),'FontWeight','bold','FontSize',15)
+set(get(gca,'YLabel'),'FontWeight','bold','FontSize',15)
 plt.export('figure-raw-drafts/MB-ICG-Default-Spectrum.pdf');
 
 %% Plot radial profiles
@@ -424,6 +436,8 @@ rectangle('Position',[0.750 0 0.300 3300], 'FaceColor', [0 0 0 0.15],'LineStyle'
 text(1.128,1420,'in µM','Color',[0 0 0],'FontSize',11,'FontWeight','bold');
 text(0.350,3150,'Tube lumen','Color',[0.5 0.5 0.5],'FontSize',11,'FontWeight','bold');
 text(0.850,3150,'Wall','Color',[1 1 1],'FontSize',11,'FontWeight','bold');
+set(get(gca,'XLabel'),'FontWeight','bold','FontSize',15)
+set(get(gca,'YLabel'),'FontWeight','bold','FontSize',15)
 plt.export('figure-raw-drafts/MethyleneBlue-DS-Radial-MSOTDefault.pdf');
 
 
@@ -458,6 +472,8 @@ rectangle('Position',[0.750 0 0.300 3300], 'FaceColor', [0 0 0 0.15],'LineStyle'
 text(0.350,2850,'Tube lumen','Color',[0.5 0.5 0.5],'FontSize',11,'FontWeight','bold');
 text(0.850,2850,'Wall','Color',[1 1 1],'FontSize',11,'FontWeight','bold');
 text(1.128,1420,'in µM','Color',[0 0 0],'FontSize',11,'FontWeight','bold');
+set(get(gca,'XLabel'),'FontWeight','bold','FontSize',15)
+set(get(gca,'YLabel'),'FontWeight','bold','FontSize',15)
 plt.export('figure-raw-drafts/MethyleneBlue-DS-Radial-flowSpec.pdf');
 
 figure; hold on;
@@ -491,4 +507,6 @@ rectangle('Position',[0.750 0 0.300 3300], 'FaceColor', [0 0 0 0.15],'LineStyle'
 text(0.350,3050,'Tube lumen','Color',[0.5 0.5 0.5],'FontSize',11,'FontWeight','bold');
 text(0.850,3050,'Wall','Color',[1 1 1],'FontSize',11,'FontWeight','bold');
 text(1.128,1420,'in µM','Color',[0 0 0],'FontSize',11,'FontWeight','bold');
+set(get(gca,'XLabel'),'FontWeight','bold','FontSize',15)
+set(get(gca,'YLabel'),'FontWeight','bold','FontSize',15)
 plt.export('figure-raw-drafts/MethyleneBlue-DS-Radial-clarioStar.pdf');

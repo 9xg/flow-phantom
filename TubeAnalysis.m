@@ -142,8 +142,8 @@ plt.TickLength = [0.01 0.01]
 plt.XMinorTick = false;
 plt.ShowBox = false;
 set(gca, 'Layer', 'Top');
-set(get(gca,'XLabel'),'FontWeight','bold','FontSize',16)
-set(get(gca,'YLabel'),'FontWeight','bold','FontSize',16)
+set(get(gca,'XLabel'),'FontWeight','bold','FontSize',15)
+set(get(gca,'YLabel'),'FontWeight','bold','FontSize',15)
 %rectangle('Position',[7.5 0 1 1.1], 'FaceColor', [0 1 0 0.1],'LineStyle','none');
 plt.export('figure-raw-drafts/TubeAnalysis-Signal-To-Background.pdf');
 %%
