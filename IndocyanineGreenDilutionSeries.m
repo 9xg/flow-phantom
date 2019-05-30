@@ -144,6 +144,8 @@ plt.LineStyle = {'none','none','none','-'};
 set(gca, 'Layer', 'Top');
 %rectangle('Position',[37.5 1700 62.5 1600], 'FaceColor', [0.7 0 0 0.075],'LineStyle','none');
 %text(65,2000,'Non-linear','Color',[0.7 0.5 0.5],'FontSize',12,'FontWeight','bold');
+set(get(gca,'XLabel'),'FontWeight','bold','FontSize',15)
+set(get(gca,'YLabel'),'FontWeight','bold','FontSize',15)
 plt.export('figure-raw-drafts/IndocyanineGreen-DS-Unmixing-Comparison.pdf');
 
 %%
@@ -180,6 +182,8 @@ plt.LineStyle = {'none','none','none','-'};
 set(gca, 'Layer', 'Top');
 %rectangle('Position',[37.5 1700 62.5 1600], 'FaceColor', [0.7 0 0 0.075],'LineStyle','none');
 %text(65,2000,'Non-linear','Color',[0.7 0.5 0.5],'FontSize',12,'FontWeight','bold');
+set(get(gca,'XLabel'),'FontWeight','bold','FontSize',15)
+set(get(gca,'YLabel'),'FontWeight','bold','FontSize',15)
 plt.export('figure-raw-drafts/IndocyanineGreen-DS-Unmixing-Comparison-Talk-Version.pdf');
 
 
@@ -201,7 +205,7 @@ legend(plots(newOrder),legendLabels(newOrder));
 
 plt = Plot(); % create a Plot object and grab the current figure
 plt.XLabel = 'Wavelength [nm]'; % xlabel
-plt.YLabel = 'Absorbance [a.u.]'; %ylabel
+plt.YLabel = 'Online spectrometer absorbance [a.u.]'; %ylabel
 plt.BoxDim = [5 5];
 plt.YLim = [0 0.7];
 plt.XLim = [500 950];
@@ -217,6 +221,8 @@ set(gca, 'Layer', 'Top');
 rectangle('Position',[0 0 660 1.2], 'FaceColor', [0 0 0 0.075],'LineStyle','none');
 text(890,0.28,'in µM','Color',[0 0 0],'FontSize',11,'FontWeight','bold');
 %text(863,0.2,'MSR','Color',[0.5 0.5 0.5],'FontSize',14,'FontWeight','bold');
+set(get(gca,'XLabel'),'FontWeight','bold','FontSize',15)
+set(get(gca,'YLabel'),'FontWeight','bold','FontSize',15)
 plt.export('figure-raw-drafts/IndocyanineGreen-DS-FlowSpectrometer.pdf');
 %plt.Title = 'Voltage as a function of time'; % plot title
 %%
@@ -254,6 +260,8 @@ text(890,3.0,'in µM','Color',[0 0 0],'FontSize',11,'FontWeight','bold');
 %text(870,2.0,'MSR','Color',[0.5 0.5 0.5],'FontSize',14,'FontWeight','bold');
 line('XData', [670 790], 'YData', [7.1 7.1],'Color','r','LineWidth',2,'HandleVisibility','off');
 text(650,7.3,'Spectrometer saturation','Color','r','FontSize',11,'FontWeight','bold');
+set(get(gca,'XLabel'),'FontWeight','bold','FontSize',15)
+set(get(gca,'YLabel'),'FontWeight','bold','FontSize',15)
 plt.export('figure-raw-drafts/IndocyanineGreen-DS-ClarioStar.pdf');
 %% MSOT plot 
 lineStyle = {'-',':','-.','-',':','-.','-',':','-.','-',':','-.'}
@@ -272,7 +280,7 @@ legend(plots(newOrder),legendLabels(newOrder));
 
 plt = Plot(); % create a Plot object and grab the current figure
 plt.XLabel = 'Wavelength [nm]'; % xlabel
-plt.YLabel = 'PAT intensity [a.u.]'; %ylabel
+plt.YLabel = 'PA signal intensity [a.u.]'; %ylabel
 plt.BoxDim = [5 5];
 plt.YLim = [0 3000];
 plt.XLim = [500 950];
@@ -287,6 +295,8 @@ plt.LineWidth = 2.5;
 set(gca, 'Layer', 'Top');
 rectangle('Position',[0 0 660 3000], 'FaceColor', [0 0 0 0.075],'LineStyle','none');
 text(890,1285,'in µM','Color',[0 0 0],'FontSize',11,'FontWeight','bold');
+set(get(gca,'XLabel'),'FontWeight','bold','FontSize',15)
+set(get(gca,'YLabel'),'FontWeight','bold','FontSize',15)
 plt.export('figure-raw-drafts/IndocyanineGreen-DS-MSOT.pdf');
 %plt.Title = 'Voltage as a function of time'; % plot title
 %% Plot radial profiles
@@ -321,6 +331,8 @@ rectangle('Position',[0.750 0 0.300 3700], 'FaceColor', [0 0 0 0.15],'LineStyle'
 text(1.128,1580,'in µM','Color',[0 0 0],'FontSize',11,'FontWeight','bold');
 text(0.350,3550,'Tube lumen','Color',[0.5 0.5 0.5],'FontSize',11,'FontWeight','bold');
 text(0.850,3550,'Wall','Color',[1 1 1],'FontSize',11,'FontWeight','bold');
+set(get(gca,'XLabel'),'FontWeight','bold','FontSize',15)
+set(get(gca,'YLabel'),'FontWeight','bold','FontSize',15)
 plt.export('figure-raw-drafts/IndocyanineGreen-DS-Radial-MSOTDefault.pdf');
 
 
@@ -355,6 +367,8 @@ rectangle('Position',[0.750 0 0.300 3400], 'FaceColor', [0 0 0 0.15],'LineStyle'
 text(0.350,3275,'Tube lumen','Color',[0.5 0.5 0.5],'FontSize',11,'FontWeight','bold');
 text(0.850,3275,'Wall','Color',[1 1 1],'FontSize',11,'FontWeight','bold');
 text(1.128,1470,'in µM','Color',[0 0 0],'FontSize',11,'FontWeight','bold');
+set(get(gca,'XLabel'),'FontWeight','bold','FontSize',15)
+set(get(gca,'YLabel'),'FontWeight','bold','FontSize',15)
 plt.export('figure-raw-drafts/IndocyanineGreen-DS-Radial-flowSpec.pdf');
 
 figure; hold on;
@@ -388,4 +402,6 @@ rectangle('Position',[0.750 0 0.300 3300], 'FaceColor', [0 0 0 0.15],'LineStyle'
 text(0.350,3150,'Tube lumen','Color',[0.5 0.5 0.5],'FontSize',11,'FontWeight','bold');
 text(0.850,3150,'Wall','Color',[1 1 1],'FontSize',11,'FontWeight','bold');
 text(1.128,1420,'in µM','Color',[0 0 0],'FontSize',11,'FontWeight','bold');
+set(get(gca,'XLabel'),'FontWeight','bold','FontSize',15)
+set(get(gca,'YLabel'),'FontWeight','bold','FontSize',15)
 plt.export('figure-raw-drafts/IndocyanineGreen-DS-Radial-clarioStar.pdf');

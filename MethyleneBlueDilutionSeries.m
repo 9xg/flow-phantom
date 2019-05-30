@@ -275,7 +275,7 @@ legend(plots(newOrder),legendLabels(newOrder));
 
 plt = Plot(); % create a Plot object and grab the current figure
 plt.XLabel = 'Wavelength [nm]'; % xlabel
-plt.YLabel = 'Absorbance [a.u.]'; %ylabel
+plt.YLabel = 'Online spectrometer absorbance [a.u.]'; %ylabel
 plt.BoxDim = [5 5];
 plt.YLim = [0 0.7];
 plt.XLim = [500 950];
@@ -351,7 +351,7 @@ legend(plots(newOrder),legendLabels(newOrder));
 
 plt = Plot(); % create a Plot object and grab the current figure
 plt.XLabel = 'Wavelength [nm]'; % xlabel
-plt.YLabel = 'PAT intensity [a.u.]'; %ylabel
+plt.YLabel = 'PA signal intensity [a.u.]'; %ylabel
 plt.BoxDim = [5 5];
 plt.YLim = [0 3000];
 plt.XLim = [500 950];
