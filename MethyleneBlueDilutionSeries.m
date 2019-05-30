@@ -335,19 +335,20 @@ set(get(gca,'XLabel'),'FontWeight','bold','FontSize',15)
 set(get(gca,'YLabel'),'FontWeight','bold','FontSize',15)
 plt.export('figure-raw-drafts/MethyleneBlue-DS-ClarioStar.pdf');
 %% MSOT plot 
-lineStyle = {'-',':','-.','-',':','-.','-',':','-.'}
+lineStyle = {'none','-','none',':','none','-.','none','-','none',':','none','-.','none','-','none',':','none','-.','none','-','none',':','none','-.'};
 figure;hold on;
 cmap = colorGradient([183/255 198/255 255/255],[23/255 39/255 115/255],12);
+shownHandles = [];
 for k=1:length(mbConcentrationList)
-    plot(wavelengths,wavelengthsDataSlice(:,k),'Color','r');
+    f = fit(wavelengths',wavelengthsDataSlice(:,k),'smoothingspline');
+    plot(wavelengths,wavelengthsDataSlice(:,k),'*');
+    shownHandles(end+1) = plot(660:950,f(660:950));
 end
 
 hold off;
-%title('Flow Spectrometer')
-plots = flipud(get(gca, 'children'));
 legendLabels = strcat(strsplit(num2str(mbConcentrationList)));
 newOrder = flip(1:9,2);
-legend(plots(newOrder),legendLabels(newOrder));
+legend(shownHandles(newOrder),legendLabels(newOrder))
 
 plt = Plot(); % create a Plot object and grab the current figure
 plt.XLabel = 'Wavelength [nm]'; % xlabel
