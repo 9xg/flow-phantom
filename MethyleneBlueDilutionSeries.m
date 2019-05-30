@@ -338,6 +338,7 @@ plt.export('figure-raw-drafts/MethyleneBlue-DS-ClarioStar.pdf');
 lineStyle = {'none','-','none',':','none','-.','none','-','none',':','none','-.','none','-','none',':','none','-.','none','-','none',':','none','-.'};
 figure;hold on;
 cmap = colorGradient([183/255 198/255 255/255],[23/255 39/255 115/255],12);
+cmap = reshape(repmat(cmap(:)',2,[]),[],3);
 shownHandles = [];
 for k=1:length(mbConcentrationList)
     f = fit(wavelengths',wavelengthsDataSlice(:,k),'smoothingspline');
@@ -373,6 +374,8 @@ set(get(gca,'YLabel'),'FontWeight','bold','FontSize',15)
 plt.export('figure-raw-drafts/MethyleneBlue-DS-MSOT.pdf');
 %plt.Title = 'Voltage as a function of time'; % plot title
 %%
+lineStyle = {'-',':','-.','-',':','-.','-',':','-.','-',':','-.'};
+cmap = colorGradient([183/255 198/255 255/255],[23/255 39/255 115/255],12);
 figure;
 hold on;
 plot(msotDefaultSpectra.MSOT.MB_in_water_10uM(:,1),msotDefaultSpectra.MSOT.MB_in_water_10uM(:,2),'Color','b')

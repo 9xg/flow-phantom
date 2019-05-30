@@ -267,6 +267,7 @@ plt.export('figure-raw-drafts/IndocyanineGreen-DS-ClarioStar.pdf');
 lineStyle = {'none','-','none',':','none','-.','none','-','none',':','none','-.','none','-','none',':','none','-.','none','-','none',':','none','-.'};
 figure;hold on;
 cmap = colorGradient([160/255 213/255 171/255],[12/255 73/255 31/255],12);
+cmap = reshape(repmat(cmap(:)',2,[]),[],3);
 shownHandles = [];
 for k=1:length(icgConcentrationList)
     f = fit(wavelengths',wavelengthsDataSlice(:,k),'smoothingspline');
@@ -301,6 +302,7 @@ set(get(gca,'YLabel'),'FontWeight','bold','FontSize',15)
 plt.export('figure-raw-drafts/IndocyanineGreen-DS-MSOT.pdf');
 %plt.Title = 'Voltage as a function of time'; % plot title
 %% Plot radial profiles
+cmap = colorGradient([160/255 213/255 171/255],[12/255 73/255 31/255],12);
 figure; hold on;
 for j=1:length(radialProfileDefault)
     plot([1:length(radialProfileClario{j})].*0.0753,radialProfileDefault{j});
