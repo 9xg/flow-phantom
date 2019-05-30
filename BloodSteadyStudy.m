@@ -228,7 +228,7 @@ plot(flowSpectrometerBloodMB.spec.times(1:196),unmixings.*100);
 %plot(partialOxygen.pO2.times(1:325),partialOxygen.pO2.prePhantomPO2(1:325),'r',partialOxygen.pO2.times(1:325),partialOxygen.pO2.postPhantomPO2(1:325),'b')
 hold off;
 plots = flipud(get(gca, 'children'));
-legendLabels = {'PAI (unmixed by literature spectrum)','Online flow spectrometer','pO₂ probe'};
+legendLabels = {'PAT (unmixed by literature spectrum)','Online flow spectrometer','pO₂ probe'};
 newOrder = flip(1:3,2);
 legend(plots(newOrder),legendLabels(newOrder),'Location','best');
 

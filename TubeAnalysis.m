@@ -142,6 +142,8 @@ plt.TickLength = [0.01 0.01]
 plt.XMinorTick = false;
 plt.ShowBox = false;
 set(gca, 'Layer', 'Top');
+set(get(gca,'XLabel'),'FontWeight','bold','FontSize',16)
+set(get(gca,'YLabel'),'FontWeight','bold','FontSize',16)
 %rectangle('Position',[7.5 0 1 1.1], 'FaceColor', [0 1 0 0.1],'LineStyle','none');
 plt.export('figure-raw-drafts/TubeAnalysis-Signal-To-Background.pdf');
 %%
@@ -149,14 +151,18 @@ figure;
 subplot(2,2,1);imshow(allDemoImgs(:,:,6),[0 1500])
 xlim([164 194]);ylim([168 199])
 title(tubes(6),'Interpreter','none');
+set(gca, 'FontSize', 11);
 subplot(2,2,2);imshow(allDemoImgs(:,:,7),[0 1500])
 xlim([145 175]);ylim([146 176])
 title(tubes(7),'Interpreter','none');
+set(gca, 'FontSize', 11);
 subplot(2,2,3);imshow(allDemoImgs(:,:,8),[0 1500])
 xlim([152 182]);ylim([151 182])
 title(tubes(8),'Interpreter','none');
+set(gca, 'FontSize', 11);
 subplot(2,2,4);imshow(allDemoImgs(:,:,9),[0 1500])
 xlim([145 175]);ylim([156 186])
 title(tubes(9),'Interpreter','none');
+set(gca, 'FontSize', 11);
 %savefig(gcf,'figure-raw-drafts/TubeAnalysis-exampleSlices.pdf')
 print('figure-raw-drafts/TubeAnalysis-exampleSlices','-dpdf')

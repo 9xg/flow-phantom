@@ -126,7 +126,7 @@ plot(dlm3.predict([0:37.5]'),'-')
 hold off;
 plt = Plot(); % create a Plot object and grab the current figure
 plt.XLabel = 'Indocyanine green concentration [µM]'; % xlabel
-plt.YLabel = 'Spectrally unmixed ICG PAI intensity [a.u.]'; %ylabel
+plt.YLabel = 'Spectrally unmixed ICG PAT intensity [a.u.]'; %ylabel
 plt.BoxDim = [5 5];
 plt.YLim = [0 3300];
 %plt.XLim = [500 950];
@@ -162,7 +162,7 @@ plot(icgConcentrationList,msotDefaultMeans,'*',icgConcentrationList,flowSpectrom
 hold off;
 plt = Plot(); % create a Plot object and grab the current figure
 plt.XLabel = 'Indocyanine green concentration [µM]'; % xlabel
-plt.YLabel = 'Spectrally unmixed ICG PAI intensity [a.u.]'; %ylabel
+plt.YLabel = 'Spectrally unmixed ICG PAT intensity [a.u.]'; %ylabel
 plt.BoxDim = [5 5];
 plt.YLim = [0 3300];
 %plt.XLim = [500 950];
@@ -272,7 +272,7 @@ legend(plots(newOrder),legendLabels(newOrder));
 
 plt = Plot(); % create a Plot object and grab the current figure
 plt.XLabel = 'Wavelength [nm]'; % xlabel
-plt.YLabel = 'PAI intensity [a.u.]'; %ylabel
+plt.YLabel = 'PAT intensity [a.u.]'; %ylabel
 plt.BoxDim = [5 5];
 plt.YLim = [0 3000];
 plt.XLim = [500 950];
@@ -302,7 +302,7 @@ legend(plots(newOrder),legendLabels(newOrder));
 
 plt = Plot(); % create a Plot object and grab the current figure
 plt.XLabel = 'Distance from tube centre [mm]'; % xlabel
-plt.YLabel = 'Spectrally unmixed ICG PAI intensity [a.u.]'; %ylabel
+plt.YLabel = 'Spectrally unmixed ICG PAT intensity [a.u.]'; %ylabel
 %plt.Title = 'MSOT default radial profile';
 plt.BoxDim = [5 5];
 plt.YLim = [0 3700];
@@ -336,7 +336,7 @@ legend(plots(newOrder),legendLabels(newOrder));
 
 plt = Plot(); % create a Plot object and grab the current figure
 plt.XLabel = 'Distance from tube centre [mm]'; % xlabel
-plt.YLabel = 'Spectrally unmixed ICG PAI intensity [a.u.]'; %ylabel
+plt.YLabel = 'Spectrally unmixed ICG PAT intensity [a.u.]'; %ylabel
 %plt.Title = 'Flow spec radial profile';
 plt.BoxDim = [5 5];
 plt.YLim = [0 3400];
@@ -369,7 +369,7 @@ legend(plots(newOrder),legendLabels(newOrder));
 
 plt = Plot(); % create a Plot object and grab the current figure
 plt.XLabel = 'Distance from tube centre [mm]'; % xlabel
-plt.YLabel = 'Spectrally unmixed ICG PAI intensity [a.u.]'; %ylabel
+plt.YLabel = 'Spectrally unmixed ICG PAT intensity [a.u.]'; %ylabel
 %plt.Title = 'Clario Star radial profile';
 plt.BoxDim = [5 5];
 plt.YLim = [0 3300];

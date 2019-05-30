@@ -141,7 +141,7 @@ caxis([1 1000]) % change here
 
 plt = Plot(); % create a Plot object and grab the current figure
 plt.XLabel = 'Radial tube profile [px]'; % xlabel
-plt.YLabel = 'Spectrally unmixed PAI intensity [a.u.]'; %ylabel
+plt.YLabel = 'Spectrally unmixed PAT intensity [a.u.]'; %ylabel
 plt.Title = 'MSOT default radial profile';
 plt.BoxDim = [5 5];
 plt.YLim = [-20 350];
@@ -169,7 +169,7 @@ caxis([1 1000]) % change here
 
 plt = Plot(); % create a Plot object and grab the current figure
 plt.XLabel = 'Radial tube profile [px]'; % xlabel
-plt.YLabel = 'Spectrally unmixed PAI intensity [a.u.]'; %ylabel
+plt.YLabel = 'Spectrally unmixed PAT intensity [a.u.]'; %ylabel
 plt.Title = 'Flow spec radial profile';
 plt.BoxDim = [5 5];
 plt.YLim = [-20 350];
