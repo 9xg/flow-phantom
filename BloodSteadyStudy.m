@@ -154,7 +154,7 @@ plt.YLabel = 'Partial pressure of pO₂ [mmHg]'; %ylabel
 %plt.Title = 'Flow spectra'
 %plt.Legend = {'Blood oxygenation',['LM blood oxygenation / R²=' num2str(round(dlm3.Rsquared.Adjusted,3))]};
 plt.LegendLoc = 'Best';
-plt.BoxDim = [3 2];
+plt.BoxDim = [5 5];
 plt.YLim = [0 200];
 plt.XLim = [0 200];
 plt.FontName = 'Arial';
@@ -168,6 +168,8 @@ plt.LineWidth = 2.5;
 set(gca, 'Layer', 'Top');
 %line('XData', [79 79], 'YData', [-20 50],'Color',[1 0 0 0.5],'LineWidth',2,'HandleVisibility','off');
 %text(77,60,{'Injection', 'Start'},'Color',[1 0.4 0.4],'FontSize',11,'FontWeight','bold');
+set(get(gca,'XLabel'),'FontWeight','bold','FontSize',15)
+set(get(gca,'YLabel'),'FontWeight','bold','FontSize',15)
 plt.export('figure-raw-drafts/Blood-Steady-pO2-Probe.pdf');
 %%
 cmap = hot(50);
@@ -189,7 +191,7 @@ plots = flipud(get(gca, 'children'));
 plt = Plot(); % create a Plot object and grab the current figure
 plt.XLabel = 'Radial tube profile [px]'; % xlabel
 plt.YLabel = 'Blood oxygenation sO₂ [%]'; %ylabel
-plt.BoxDim = [4 3];
+plt.BoxDim = [5 5];
 plt.YLim = [75 101];
 plt.XLim = [2 16];
 plt.FontName = 'Arial';
@@ -206,6 +208,8 @@ rectangle('Position',[10 0 4 3300], 'FaceColor', [0 0 0 0.15],'LineStyle','none'
 text(14.1,1420,'in µM','Color',[0 0 0],'FontSize',11,'FontWeight','bold');
 text(3,2700,'Tube lumen','Color',[0.5 0.5 0.5],'FontSize',11,'FontWeight','bold');
 text(11,2700,'Wall','Color',[1 1 1],'FontSize',11,'FontWeight','bold');
+set(get(gca,'XLabel'),'FontWeight','bold','FontSize',15)
+set(get(gca,'YLabel'),'FontWeight','bold','FontSize',15)
 plt.export('figure-raw-drafts/Blood-Steady-Radial-Default.pdf');
 
 %%
@@ -228,7 +232,7 @@ plot(flowSpectrometerBloodMB.spec.times(1:196),unmixings.*100);
 %plot(partialOxygen.pO2.times(1:325),partialOxygen.pO2.prePhantomPO2(1:325),'r',partialOxygen.pO2.times(1:325),partialOxygen.pO2.postPhantomPO2(1:325),'b')
 hold off;
 plots = flipud(get(gca, 'children'));
-legendLabels = {'PAT (unmixed by literature spectrum)','Online flow spectrometer','pO₂ probe'};
+legendLabels = {'PAT (unmixed by literature spectrum)','Online flow spectrometer','pO₂ probe (Severinghaus model)'};
 newOrder = flip(1:3,2);
 legend(plots(newOrder),legendLabels(newOrder),'Location','best');
 
@@ -238,7 +242,7 @@ plt.YLabel = 'Blood oxygenation sO₂ [%]'; %ylabel
 %plt.Title = 'Flow spectra'
 %plt.Legend = {'MSOT','Online flow spectrometer','pO₂ probe'};
 plt.LegendLoc = 'East';
-plt.BoxDim = [4 3];
+plt.BoxDim = [5 5];
 plt.YLim = [75 101];
 plt.XLim = [0 200];
 plt.FontName = 'Arial';
@@ -252,4 +256,6 @@ plt.LineWidth = 2.5;
 set(gca, 'Layer', 'Top');
 %line('XData', [79 79], 'YData', [-20 50],'Color',[1 0 0 0.5],'LineWidth',2,'HandleVisibility','off');
 %text(77,60,{'Injection', 'Start'},'Color',[1 0.4 0.4],'FontSize',11,'FontWeight','bold');
+set(get(gca,'XLabel'),'FontWeight','bold','FontSize',15)
+set(get(gca,'YLabel'),'FontWeight','bold','FontSize',15)
 plt.export('figure-raw-drafts/Blood-Steady-MSOT-Flow-pO2-Comp.pdf');
