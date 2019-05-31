@@ -196,7 +196,7 @@ plot(dlm3.predict([1:100]'),'-')
 hold off;
 plt = Plot(); % create a Plot object and grab the current figure
 plt.XLabel = 'Methylene blue concentration [µM]'; % xlabel
-plt.YLabel = 'Spectrally unmixed MB PAT intensity [a.u.]'; %ylabel
+plt.YLabel = 'Spectrally unmixed MB PA signal intensity [a.u.]'; %ylabel
 plt.BoxDim = [5 5];
 plt.YLim = [0 1300];
 %plt.XLim = [500 950];
@@ -238,7 +238,7 @@ plot(mbConcentrationList,msotDefaultMeans,'*',mbConcentrationList,flowSpectromet
 hold off;
 plt = Plot(); % create a Plot object and grab the current figure
 plt.XLabel = 'Methylene blue concentration [µM]'; % xlabel
-plt.YLabel = 'Spectrally unmixed MB PAT intensity [a.u.]'; %ylabel
+plt.YLabel = 'Spectrally unmixed MB PA signal intensity [a.u.]'; %ylabel
 plt.BoxDim = [5 5];
 plt.YLim = [0 1300];
 %plt.XLim = [500 950];
@@ -421,7 +421,7 @@ legend(plots(newOrder),legendLabels(newOrder));
 
 plt = Plot(); % create a Plot object and grab the current figure
 plt.XLabel = 'Distance from tube centre [µm]'; % xlabel
-plt.YLabel = 'Spectrally unmixed MB PAT intensity [a.u.]'; %ylabel
+plt.YLabel = 'Spectrally unmixed MB PA signal intensity [a.u.]'; %ylabel
 %plt.Title = 'MSOT default radial profile';
 plt.BoxDim = [5 5];
 plt.YLim = [0 3300];
@@ -457,7 +457,7 @@ legend(plots(newOrder),legendLabels(newOrder));
 
 plt = Plot(); % create a Plot object and grab the current figure
 plt.XLabel = 'Distance from tube centre [mm]'; % xlabel
-plt.YLabel = 'Spectrally unmixed MB PAT intensity [a.u.]'; %ylabel
+plt.YLabel = 'Spectrally unmixed MB PA signal intensity [a.u.]'; %ylabel
 %plt.Title = 'Flow spec radial profile';
 plt.BoxDim = [5 5];
 plt.YLim = [0 3300];
@@ -492,7 +492,7 @@ legend(plots(newOrder),legendLabels(newOrder));
 
 plt = Plot(); % create a Plot object and grab the current figure
 plt.XLabel = 'Distance from tube centre [mm]'; % xlabel
-plt.YLabel = 'Spectrally unmixed MB PAT intensity [a.u.]'; %ylabel
+plt.YLabel = 'Spectrally unmixed MB PA signal intensity [a.u.]'; %ylabel
 %plt.Title = 'Clario Star radial profile';
 plt.BoxDim = [5 5];
 plt.YLim = [0 3300];
