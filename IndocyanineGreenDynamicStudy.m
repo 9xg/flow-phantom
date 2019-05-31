@@ -103,7 +103,7 @@ plot(msotIndocyanineGreen.msot.averagedTimes,estConcFlow(flowSpectrometerMeans)-
 hold off;
 plt = Plot(); % create a Plot object and grab the current figure
 plt.XLabel = 'Time [s]'; % xlabel
-plt.YLabel = 'Indocyanine green concentration [µM]'; %ylabel
+plt.YLabel = 'ICG concentration [µM]'; %ylabel
 %plt.Title = 'MSOT Default spectra'
 plt.Legend = {'Modelled concentration','Measured concentration (literature spectrum)','Measured concentration (online spectrum)'};
 plt.LegendLoc = 'NorthWest';
@@ -122,14 +122,16 @@ plt.LineWidth = 2.5;
 set(gca, 'Layer', 'Top');
 line('XData', [79 79], 'YData', [-20 15],'Color',[1 0 0 0.5],'LineWidth',2,'HandleVisibility','off');
 text(77,18,{'Injection', 'Start'},'Color',[1 0.4 0.4],'FontSize',11,'FontWeight','bold');
+set(get(gca,'XLabel'),'FontWeight','bold','FontSize',15)
+set(get(gca,'YLabel'),'FontWeight','bold','FontSize',15)
 plt.export('figure-raw-drafts/IndocyanineGreen-Dynamic-ActualEstimated.pdf');
 %%
 figure;plot(msotIndocyanineGreen.msot.averagedTimes(1:end),estConcFlow(flowSpectrometerMeans),[1:1485]',C3)
 
 plt = Plot(); % create a Plot object and grab the current figure
 plt.XLabel = 'Time [s]'; % xlabel
-plt.YLabel = 'Indocyanine green concentration [µM]'; %ylabel
-plt.Title = 'Flow spectrometer spectra'
+plt.YLabel = 'ICG concentration [µM]'; %ylabel
+%plt.Title = 'Flow spectrometer spectra'
 plt.Legend = {'Actual concentration','Estimated concentration'};
 plt.LegendLoc = 'Best';
 plt.BoxDim = [5 5];
@@ -146,6 +148,8 @@ plt.LineWidth = 2.5;
 set(gca, 'Layer', 'Top');
 line('XData', [90 90], 'YData', [-20 50],'Color',[1 0 0 0.5],'LineWidth',2,'HandleVisibility','off');
 text(77,55,{'Injection', 'Start'},'Color',[1 0.4 0.4],'FontSize',11,'FontWeight','bold');
+set(get(gca,'XLabel'),'FontWeight','bold','FontSize',15)
+set(get(gca,'YLabel'),'FontWeight','bold','FontSize',15)
 plt.export('figure-raw-drafts/IndocyanineGreen-Dynamic-ActualEstimated-FlowSpec.pdf');
 %% Plot radial profiles
 cmap = colorGradient([183/255 198/255 255/255],[23/255 39/255 115/255],106);
