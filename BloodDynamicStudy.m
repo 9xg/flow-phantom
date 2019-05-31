@@ -88,6 +88,8 @@ plt.TickLength = [0.01 0.01];
 plt.LineStyle = {'-','-.'};
 plt.LineWidth = 2.5;
 set(gca, 'Layer', 'Top');
+set(get(gca,'XLabel'),'FontWeight','bold','FontSize',15)
+set(get(gca,'YLabel'),'FontWeight','bold','FontSize',15)
 plt.export('figure-raw-drafts/Blood-Dynamic-HbO2Hb-Default.pdf');
 
 
@@ -112,6 +114,8 @@ plt.TickLength = [0.01 0.01];
 plt.LineStyle = {'-','-.'};
 plt.LineWidth = 2.5;
 set(gca, 'Layer', 'Top');
+set(get(gca,'XLabel'),'FontWeight','bold','FontSize',15)
+set(get(gca,'YLabel'),'FontWeight','bold','FontSize',15)
 plt.export('figure-raw-drafts/Blood-Dynamic-HbO2Hb-Flow.pdf');
 %%
 figure;
@@ -135,6 +139,8 @@ plt.TickLength = [0.01 0.01];
 plt.LineStyle = {'-','-','--','--'};
 plt.LineWidth = 2.5;
 set(gca, 'Layer', 'Top');
+set(get(gca,'XLabel'),'FontWeight','bold','FontSize',15)
+set(get(gca,'YLabel'),'FontWeight','bold','FontSize',15)
 plt.export('figure-raw-drafts/Blood-Dynamic-HbO2Hb-Flow-Combined.pdf');
 
 %%
@@ -249,6 +255,8 @@ plt.TickLength = [0.01 0.01];
 plt.LineStyle = {'-','-.'};
 plt.LineWidth = 2.5;
 set(gca, 'Layer', 'Top');
+set(get(gca,'XLabel'),'FontWeight','bold','FontSize',15)
+set(get(gca,'YLabel'),'FontWeight','bold','FontSize',15)
 %line('XData', [79 79], 'YData', [-20 50],'Color',[1 0 0 0.5],'LineWidth',2,'HandleVisibility','off');
 %text(77,60,{'Injection', 'Start'},'Color',[1 0.4 0.4],'FontSize',11,'FontWeight','bold');
 %plt.export('figure-raw-drafts/BloodMB-Dynamic-ActualEstimated-Default.pdf');
@@ -308,6 +316,8 @@ plt.LineWidth = 2.5;
 set(gca, 'Layer', 'Top');
 %line('XData', [79 79], 'YData', [-20 50],'Color',[1 0 0 0.5],'LineWidth',2,'HandleVisibility','off');
 %text(77,60,{'Injection', 'Start'},'Color',[1 0.4 0.4],'FontSize',11,'FontWeight','bold');
+set(get(gca,'XLabel'),'FontWeight','bold','FontSize',15)
+set(get(gca,'YLabel'),'FontWeight','bold','FontSize',15)
 plt.export('figure-raw-drafts/Blood-Dynamic-MSOT-Flow-pO2-Comp.pdf');
 
 %%
@@ -359,6 +369,8 @@ plt.LineWidth = 2.5;
 set(gca, 'Layer', 'Top');
 %line('XData', [79 79], 'YData', [-20 50],'Color',[1 0 0 0.5],'LineWidth',2,'HandleVisibility','off');
 %text(77,60,{'Injection', 'Start'},'Color',[1 0.4 0.4],'FontSize',11,'FontWeight','bold');
+set(get(gca,'XLabel'),'FontWeight','bold','FontSize',15)
+set(get(gca,'YLabel'),'FontWeight','bold','FontSize',15)
 plt.export('figure-raw-drafts/Blood-Dynamic-MSOT-Flow-pO2-Comp-Talk-Version.pdf');
 
 %%
@@ -404,5 +416,7 @@ rectangle('Position',[11*0.0753 0 4*0.0753 3300], 'FaceColor', [1 1 1 0.9],'Line
 text(5*0.0753,3050,'Tube lumen','Color',[0.5 0.5 0.5],'FontSize',11,'FontWeight','bold');
 text(11*0.0753,3050,'Wall','Color',[1 1 1],'FontSize',11,'FontWeight','bold');
 text(14.1*0.0753,1420,'in µM','Color',[0 0 0],'FontSize',11,'FontWeight','bold');
+set(get(gca,'XLabel'),'FontWeight','bold','FontSize',15)
+set(get(gca,'YLabel'),'FontWeight','bold','FontSize',15)
 plt.export('figure-raw-drafts/Blood-Dynamic-Radial-Default.pdf');
 
