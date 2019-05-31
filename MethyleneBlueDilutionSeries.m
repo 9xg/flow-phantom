@@ -195,7 +195,7 @@ plot(dlm2.predict([1:100]'),'-')
 plot(dlm3.predict([1:100]'),'-')
 hold off;
 plt = Plot(); % create a Plot object and grab the current figure
-plt.XLabel = 'Methylene blue concentration [µM]'; % xlabel
+plt.XLabel = 'MB concentration [µM]'; % xlabel
 plt.YLabel = 'Spectrally unmixed MB PA signal intensity [a.u.]'; %ylabel
 plt.BoxDim = [5 5];
 plt.YLim = [0 1300];
@@ -237,7 +237,7 @@ plot(mbConcentrationList,msotDefaultMeans,'*',mbConcentrationList,flowSpectromet
 
 hold off;
 plt = Plot(); % create a Plot object and grab the current figure
-plt.XLabel = 'Methylene blue concentration [µM]'; % xlabel
+plt.XLabel = 'MB concentration [µM]'; % xlabel
 plt.YLabel = 'Spectrally unmixed MB PA signal intensity [a.u.]'; %ylabel
 plt.BoxDim = [5 5];
 plt.YLim = [0 1300];

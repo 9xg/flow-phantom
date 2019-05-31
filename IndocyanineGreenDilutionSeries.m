@@ -125,7 +125,7 @@ plot(dlm2.predict([0:37.5]'),'-')
 plot(dlm3.predict([0:37.5]'),'-')
 hold off;
 plt = Plot(); % create a Plot object and grab the current figure
-plt.XLabel = 'Indocyanine green concentration [µM]'; % xlabel
+plt.XLabel = 'ICG concentration [µM]'; % xlabel
 plt.YLabel = 'Spectrally unmixed ICG PA signal intensity [a.u.]'; %ylabel
 plt.BoxDim = [5 5];
 plt.YLim = [0 3300];
@@ -163,7 +163,7 @@ plot(icgConcentrationList,msotDefaultMeans,'*',icgConcentrationList,flowSpectrom
 
 hold off;
 plt = Plot(); % create a Plot object and grab the current figure
-plt.XLabel = 'Indocyanine green concentration [µM]'; % xlabel
+plt.XLabel = 'ICG concentration [µM]'; % xlabel
 plt.YLabel = 'Spectrally unmixed ICG PA signal intensity [a.u.]'; %ylabel
 plt.BoxDim = [5 5];
 plt.YLim = [0 3300];
