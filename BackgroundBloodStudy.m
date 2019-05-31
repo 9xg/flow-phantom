@@ -140,6 +140,8 @@ plt.TickLength = [0.01 0.01];
 plt.LineStyle = {'-','-','-','-'};
 plt.LineWidth = 2.5;
 set(gca, 'Layer', 'Top');
+set(get(gca,'XLabel'),'FontWeight','bold','FontSize',15)
+set(get(gca,'YLabel'),'FontWeight','bold','FontSize',15)
 plt.export('figure-raw-drafts/BackgroundBlood-UnCorrected.pdf');
 %line('XData', [79 79], 'YData', [-20 50],'Color',[1 0 0 0.5],'LineWidth',2,'HandleVisibility','off');
 %text(77,60,{'Injection', 'Start'},'Color',[1 0.4 0.4],'FontSize',11,'FontWeight','bold');
@@ -177,6 +179,8 @@ plt.LineWidth = 2.5;
 set(gca, 'Layer', 'Top');
 %line('XData', [79 79], 'YData', [-20 50],'Color',[1 0 0 0.5],'LineWidth',2,'HandleVisibility','off');
 %text(77,60,{'Injection', 'Start'},'Color',[1 0.4 0.4],'FontSize',11,'FontWeight','bold');
+set(get(gca,'XLabel'),'FontWeight','bold','FontSize',15)
+set(get(gca,'YLabel'),'FontWeight','bold','FontSize',15)
 plt.export('figure-raw-drafts/BackgroundBlood-Corrected.pdf');
 %%
 figure;hold on;
@@ -216,6 +220,8 @@ plt.XLabel = 'Phantoms with different background absorptions'; % xlabel
 plt.YLabel = 'Blood oxygenation sO₂ [%]'; %ylabel
 %set(gca, 'Layer', 'Top');
 %rectangle('Position',[7.5 0 1 1.1], 'FaceColor', [0 1 0 0.1],'LineStyle','none');
+set(get(gca,'XLabel'),'FontWeight','bold','FontSize',15)
+set(get(gca,'YLabel'),'FontWeight','bold','FontSize',15)
 plt.export('figure-raw-drafts/BackgroundBlood-Attenuation-Comparison-Default.pdf');
 
 %%
@@ -256,4 +262,6 @@ plt.XLabel = 'Phantoms with different background absorptions'; % xlabel
 plt.YLabel = 'Blood oxygenation sO₂ [%]'; %ylabel
 %set(gca, 'Layer', 'Top');
 %rectangle('Position',[7.5 0 1 1.1], 'FaceColor', [0 1 0 0.1],'LineStyle','none');
+set(get(gca,'XLabel'),'FontWeight','bold','FontSize',15)
+set(get(gca,'YLabel'),'FontWeight','bold','FontSize',15)
 plt.export('figure-raw-drafts/BackgroundBlood-Attenuation-Comparison-Online.pdf');
