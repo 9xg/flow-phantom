@@ -13,6 +13,8 @@ msotIndocyanineGreenReconMean = squeeze(mean(msotIndocyanineGreen.msot.recon,3))
 flowSpectrometerMethyleneBlue = load('/media/gehrun01/work-io/flow-phantom/data/2_MB_ICG_dilution_series/spectrometer_MB.mat');
 flowSpectrometerIndocyanineGreen = load('/media/gehrun01/work-io/flow-phantom/data/2_MB_ICG_dilution_series/spectrometer_ICG.mat');
 
+clarioStarIndocyanineGreen = load('/media/gehrun01/work-io/flow-phantom/data/2_MB_ICG_dilution_series/CLARIOstar_ICG.mat');
+clarioStarMethyleneBlue = load('/media/gehrun01/work-io/flow-phantom/data/2_MB_ICG_dilution_series/CLARIOstar_MB.mat');
 
 msotDefaultSpectra = load('/media/gehrun01/work-io/flow-phantom/data/spectra/MSOT_default_spectra.mat');
 
@@ -80,6 +82,38 @@ rectangle('Position',[0 0 660 230000], 'FaceColor', [0 0 0 0.075],'LineStyle','n
 set(get(gca,'XLabel'),'FontWeight','bold','FontSize',15)
 set(get(gca,'YLabel'),'FontWeight','bold','FontSize',15)
 plt.export('figure-raw-drafts/SpectralComparison-MB-DS-Online-Spectrum.pdf');
+%%
+lineStyle = {'-'};
+figure;
+hold on;
+plot(clarioStarMethyleneBlue.clario.wavs(:),clarioStarMethyleneBlue.clario.mean(:,4),'Color','b')
+hold off;
+plt = Plot(); % create a Plot object and grab the current figure
+plt.XLabel = 'Wavelength [nm]'; % xlabel
+plt.YLabel = 'Absorbance [a.u.]'; %ylabel
+
+plt.Legend = {'MB (10μM) offline spectrum'}
+plt.LegendLoc = 'NorthWest'
+plt.LegendBox = true;
+
+plt.BoxDim = [5 5];
+plt.YLim = [0 1.5];
+plt.XLim = [500 950];
+plt.FontName = 'Arial';
+plt.FontSize = 14;
+plt.ShowBox = false;
+plt.Colors = {[133/255 148/255 205/255]};
+plt.TickDir = 'out';
+plt.TickLength = [0.01 0.01]
+%plt.LineStyle = lineStyle;
+plt.LineWidth = 2.5;
+set(gca, 'Layer', 'Top');
+rectangle('Position',[0 0 660 230000], 'FaceColor', [0 0 0 0.075],'LineStyle','none');
+%text(890,1080,'in µM','Color',[0 0 0],'FontSize',11,'FontWeight','bold');
+%text(840,700.0,'MSR','Color',[0.5 0.5 0.5],'FontSize',12,'FontWeight','bold');
+set(get(gca,'XLabel'),'FontWeight','bold','FontSize',15)
+set(get(gca,'YLabel'),'FontWeight','bold','FontSize',15)
+plt.export('figure-raw-drafts/SpectralComparison-MB-Offline-Spectrum.pdf');
 %%
 allWavelengths = squeeze(msotMetyleneBlueReconMean(:,:,:,5));
 wavelengths=[660,664,680,684,694,700,708,715,730,735,760,770,775,779,800,850,950];
@@ -185,6 +219,38 @@ rectangle('Position',[0 0 660 230000], 'FaceColor', [0 0 0 0.075],'LineStyle','n
 set(get(gca,'XLabel'),'FontWeight','bold','FontSize',15)
 set(get(gca,'YLabel'),'FontWeight','bold','FontSize',15)
 plt.export('figure-raw-drafts/SpectralComparison-ICG-DS-Online-Spectrum.pdf');
+%%
+lineStyle = {'-'};
+figure;
+hold on;
+plot(clarioStarIndocyanineGreen.clario.wavs(:),clarioStarIndocyanineGreen.clario.mean(:,4),'Color','b')
+hold off;
+plt = Plot(); % create a Plot object and grab the current figure
+plt.XLabel = 'Wavelength [nm]'; % xlabel
+plt.YLabel = 'Absorbance [a.u.]'; %ylabel
+
+plt.Legend = {'ICG (5μM) offline spectrum'}
+plt.LegendLoc = 'NorthWest'
+plt.LegendBox = true;
+
+plt.BoxDim = [5 5];
+plt.YLim = [0 1.1];
+plt.XLim = [500 950];
+plt.FontName = 'Arial';
+plt.FontSize = 14;
+plt.ShowBox = false;
+plt.Colors = {[52/255 113/255 71/255]};
+plt.TickDir = 'out';
+plt.TickLength = [0.01 0.01]
+%plt.LineStyle = lineStyle;
+plt.LineWidth = 2.5;
+set(gca, 'Layer', 'Top');
+rectangle('Position',[0 0 660 230000], 'FaceColor', [0 0 0 0.075],'LineStyle','none');
+%text(890,1080,'in µM','Color',[0 0 0],'FontSize',11,'FontWeight','bold');
+%text(840,700.0,'MSR','Color',[0.5 0.5 0.5],'FontSize',12,'FontWeight','bold');
+set(get(gca,'XLabel'),'FontWeight','bold','FontSize',15)
+set(get(gca,'YLabel'),'FontWeight','bold','FontSize',15)
+plt.export('figure-raw-drafts/SpectralComparison-ICG-Offline-Spectrum.pdf');
 %%
 allWavelengths = squeeze(msotIndocyanineGreenReconMean(:,:,:,4));
 wavelengths=[660,664,680,684,694,700,708,715,730,735,760,770,775,779,800,850,950];
