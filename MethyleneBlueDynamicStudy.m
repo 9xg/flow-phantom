@@ -99,6 +99,8 @@ C3 = (circuitVol*concInjected*10^-6 - circuitVol*concInjected*10^-6*exp(-times.*
 %%
 localCmap = lines(3)
 localCmap(1,:) = [133/255 148/255 205/255];
+localCmap(3,:) = [99/255 99/255 99/255];
+localCmap(2,:) = [197/255 27/255 138/255];
 
 figure;hold on;
 plot([1:2079]',C3,msotMethyleneBlue.msot.averagedTimes,estConcDefault(msotDefaultMeans)-25.4465)

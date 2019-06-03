@@ -275,6 +275,8 @@ cmap = [145,40,40;
 189,0,38]/255;
 cmap = lines(4)
 cmap(1,:) = [145,40,40]/255
+cmap(3,:) = [99/255 99/255 99/255];
+cmap(4,:) = [197/255 27/255 138/255];
 severinghausPreSO2 = calcSeveringhaus(partialOxygen.pO2.prePhantomPO2);
 severinghausPostSO2 = calcSeveringhaus(partialOxygen.pO2.postPhantomPO2);
 
@@ -299,7 +301,7 @@ plt.XLabel = 'Time [s]'; % xlabel
 plt.YLabel = 'Blood oxygenation sO₂ [%]'; %ylabel
 %plt.Title = 'Flow spectra'
 %plt.Legend = {'sO₂ (MSOT / Literature spectra)','sO₂ (MSOT / Online spectra)','sO₂ (Online spectrometer)','sO₂ (Severinghaus model)'};
-plt.Legend = {'sO₂ (Severinghaus model)','sO₂ (Online spectrometer)','sO₂ (MSOT / Online spectra)','sO₂ (MSOT / Literature spectra)',};
+plt.Legend = {'sO₂ (Severinghaus model)','sO₂ (Online spectrometer)','sO₂ (PAT / online spectrum)','sO₂ (PAT / literature spectrum)',};
 plt.LegendLoc = 'Best';
 plt.LegendBox = 'on';
 plt.BoxDim = [5 5];

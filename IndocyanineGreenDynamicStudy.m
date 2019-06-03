@@ -95,7 +95,10 @@ estConcClario = @(I) I/47.278;
 C3 = (circuitVol*concInjected*10^-6 - circuitVol*concInjected*10^-6*exp(-times.*flowRateIn/circuitVol))./(circuitVol*10^-6);
 %%
 localCmap = lines(3)
-localCmap(1,:) = [52/255 113/255 71/255]
+localCmap(1,:) = [52/255 113/255 71/255];
+localCmap(3,:) = [99/255 99/255 99/255];
+localCmap(2,:) = [197/255 27/255 138/255];
+
 %figure;plot(msotIndocyanineGreen.msot.averagedTimes(1:end-1),estConcDefault(msotDefaultMeans))
 figure;hold on;
 plot([1:1485]',C3,msotIndocyanineGreen.msot.averagedTimes,estConcDefault(msotDefaultMeans)-6.6346)
