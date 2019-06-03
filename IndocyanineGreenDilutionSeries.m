@@ -12,6 +12,7 @@ msotDefaultSpectra = load('/media/gehrun01/work-io/flow-phantom/data/spectra/MSO
 wavelengths=[660,664,680,684,694,700,708,715,730,735,760,770,775,779,800,850,950];
 icgConcentrationList = [0,1.25,2.5,5,10,12.5,18.75,25,37.5,50,75,100];
 
+icgConcentrationList = [0,1.25,2.5,5,10,12.5,18.75,25,37.5];
 %figure; hold on;
 msotSpectra = [];
 msotDefaultMeans=[];
@@ -128,14 +129,14 @@ plt = Plot(); % create a Plot object and grab the current figure
 plt.XLabel = 'ICG concentration [µM]'; % xlabel
 plt.YLabel = 'Spectrally unmixed ICG PA signal intensity [a.u.]'; %ylabel
 plt.BoxDim = [5 5];
-plt.YLim = [0 3300];
+plt.YLim = [0 2500];
 %plt.XLim = [500 950];
 plt.FontName = 'Arial';
 plt.FontSize = 14;
 plt.ShowBox = false;
 plt.Colors = num2cell(cmap,2);
 plt.TickDir = 'out';
-plt.Legend = {'Literature spectrum','Online flow spectrum','Offline spectrum',['LM literature spectrum, R²=' num2str(round(dlm1.Rsquared.Adjusted,3))],['LM flow spectrum, R²=' num2str(round(dlm2.Rsquared.Adjusted,3))],['LM offline spectrum, R²=' num2str(round(dlm3.Rsquared.Adjusted,3))]}
+plt.Legend = {'Literature spectrum','Online flow spectrum','Offline spectrum',['LM literature spectrum, R²=' num2str(round(dlm1.Rsquared.Adjusted,3))],['LM online spectrum, R²=' num2str(round(dlm2.Rsquared.Adjusted,3))],['LM offline spectrum, R²=' num2str(round(dlm3.Rsquared.Adjusted,3))]}
 plt.LegendLoc = 'SouthEast'
 plt.LegendBox = true;
 plt.TickLength = [0.01 0.01];
@@ -200,14 +201,14 @@ hold off;
 %title('Flow Spectrometer')
 plots = flipud(get(gca, 'children'));
 legendLabels = strcat(strsplit(num2str(icgConcentrationList)));
-newOrder = flip(1:12,2);
+newOrder = flip(1:9,2);
 legend(plots(newOrder),legendLabels(newOrder));
 
 plt = Plot(); % create a Plot object and grab the current figure
 plt.XLabel = 'Wavelength [nm]'; % xlabel
 plt.YLabel = 'Online spectrometer absorbance [a.u.]'; %ylabel
 plt.BoxDim = [5 5];
-plt.YLim = [0 0.7];
+plt.YLim = [0 0.4];
 plt.XLim = [500 950];
 plt.FontName = 'Arial';
 plt.FontSize = 14;
@@ -219,7 +220,7 @@ plt.LineStyle = lineStyle;
 plt.LineWidth = 2.5;
 set(gca, 'Layer', 'Top');
 rectangle('Position',[0 0 660 1.2], 'FaceColor', [0 0 0 0.075],'LineStyle','none');
-text(890,0.28,'in µM','Color',[0 0 0],'FontSize',11,'FontWeight','bold');
+text(890,0.22,'in µM','Color',[0 0 0],'FontSize',11,'FontWeight','bold');
 %text(863,0.2,'MSR','Color',[0.5 0.5 0.5],'FontSize',14,'FontWeight','bold');
 set(get(gca,'XLabel'),'FontWeight','bold','FontSize',15)
 set(get(gca,'YLabel'),'FontWeight','bold','FontSize',15)
@@ -237,7 +238,7 @@ hold off;
 %title('Flow Spectrometer')
 plots = flipud(get(gca, 'children'));
 legendLabels = strcat(strsplit(num2str(icgConcentrationList)));
-newOrder = flip(1:12,2);
+newOrder = flip(1:9,2);
 legend(plots(newOrder),legendLabels(newOrder));
 
 plt = Plot(); % create a Plot object and grab the current figure
@@ -277,14 +278,14 @@ end
 
 hold off;
 legendLabels = strcat(strsplit(num2str(icgConcentrationList)));
-newOrder = flip(1:12,2);
+newOrder = flip(1:9,2);
 legend(shownHandles(newOrder),legendLabels(newOrder))
 
 plt = Plot(); % create a Plot object and grab the current figure
 plt.XLabel = 'Wavelength [nm]'; % xlabel
 plt.YLabel = 'PA signal intensity [a.u.]'; %ylabel
 plt.BoxDim = [5 5];
-plt.YLim = [0 3000];
+plt.YLim = [0 2500];
 plt.XLim = [500 950];
 plt.FontName = 'Arial';
 plt.FontSize = 14;
@@ -296,7 +297,7 @@ plt.LineStyle = lineStyle;
 plt.LineWidth = 2.5;
 set(gca, 'Layer', 'Top');
 rectangle('Position',[0 0 660 3000], 'FaceColor', [0 0 0 0.075],'LineStyle','none');
-text(890,1285,'in µM','Color',[0 0 0],'FontSize',11,'FontWeight','bold');
+text(890,1380,'in µM','Color',[0 0 0],'FontSize',11,'FontWeight','bold');
 set(get(gca,'XLabel'),'FontWeight','bold','FontSize',15)
 set(get(gca,'YLabel'),'FontWeight','bold','FontSize',15)
 plt.export('figure-raw-drafts/IndocyanineGreen-DS-MSOT.pdf');
@@ -310,7 +311,7 @@ end
 hold off;
 plots = flipud(get(gca, 'children'));
 legendLabels = strcat(strsplit(num2str(icgConcentrationList)));
-newOrder = flip(1:12,2);
+newOrder = flip(1:9,2);
 legend(plots(newOrder),legendLabels(newOrder));
 
 plt = Plot(); % create a Plot object and grab the current figure
@@ -346,7 +347,7 @@ end
 hold off;
 plots = flipud(get(gca, 'children'));
 legendLabels = strcat(strsplit(num2str(icgConcentrationList)));
-newOrder = flip(1:12,2);
+newOrder = flip(1:9,2);
 legend(plots(newOrder),legendLabels(newOrder));
 
 plt = Plot(); % create a Plot object and grab the current figure
@@ -381,7 +382,7 @@ end
 hold off;
 plots = flipud(get(gca, 'children'));
 legendLabels = strcat(strsplit(num2str(icgConcentrationList)));
-newOrder = flip(1:12,2);
+newOrder = flip(1:9,2);
 legend(plots(newOrder),legendLabels(newOrder));
 
 plt = Plot(); % create a Plot object and grab the current figure
