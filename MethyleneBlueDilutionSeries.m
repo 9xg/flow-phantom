@@ -205,7 +205,7 @@ plt.FontSize = 14;
 plt.ShowBox = false;
 plt.Colors = num2cell(cmap,2);
 plt.TickDir = 'out';
-plt.Legend = {'Literature spectrum','Online flow spectrum','Offline spectrum',['LM literature spectrum, R²=' num2str(round(dlm1.Rsquared.Adjusted,3))],['LM flow spectrum, R²=' num2str(round(dlm2.Rsquared.Adjusted,3))],['LM offline spectrum, R²=' num2str(round(dlm3.Rsquared.Adjusted,3))]}
+plt.Legend = {'Literature spectrum','Online flow spectrum','Offline spectrum',['LM literature spectrum, R²=' num2str(round(dlm1.Rsquared.Adjusted,3))],['LM online spectrum, R²=' num2str(round(dlm2.Rsquared.Adjusted,3))],['LM offline spectrum, R²=' num2str(round(dlm3.Rsquared.Adjusted,3))]}
 plt.LegendLoc = 'SouthEast'
 plt.LegendBox = true;
 plt.TickLength = [0.01 0.01];
