@@ -49,6 +49,11 @@ radialProfileClario = {};
 % subplotN = 3;
 %figure; hold on;
 for i=1:length(mbConcentrationList)
+    
+    
+    %Remove offset for clariostart
+    %clarioStarMethyleneBlue.clario.mean(:,i) = clarioStarMethyleneBlue.clario.mean(:,i) - min(clarioStarMethyleneBlue.clario.mean(:,i));
+    
     allWavelengths = squeeze(msotMetyleneBlueReconMean(:,:,:,i));
     %figure;imshow(allWavelengths(:,:,17),[])
     %h = imellipse;

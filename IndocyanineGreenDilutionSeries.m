@@ -27,7 +27,8 @@ radialProfileFlow = {};
 radialProfileClario = {};
 for i=1:length(icgConcentrationList)
     allWavelengths = squeeze(msotIndocyanineGreenReconMean(:,:,:,i));
-    
+     %Remove offset for clariostart
+     %clarioStarIndocyanineGreen.clario.mean(:,i) = clarioStarIndocyanineGreen.clario.mean(:,i) - min(clarioStarIndocyanineGreen.clario.mean(:,i));   
     
      %figure;imshow(allWavelengths(:,:,17),[])
      %h = imellipse;
