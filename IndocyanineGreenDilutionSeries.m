@@ -5,7 +5,9 @@ msotIndocyanineGreen = load('/media/gehrun01/work-io/flow-phantom/data/2_MB_ICG_
 msotIndocyanineGreenReconMean = squeeze(mean(msotIndocyanineGreen.msot.recon,3));
 
 clarioStarIndocyanineGreen = load('/media/gehrun01/work-io/flow-phantom/data/2_MB_ICG_dilution_series/CLARIOstar_ICG.mat');
-flowSpectrometerIndocyanineGreen = load('/media/gehrun01/work-io/flow-phantom/data/2_MB_ICG_dilution_series/spectrometer_ICG.mat');
+flowSpectrometerIndocyanineGreen = load('/media/gehrun01/work-io/flow-phantom/data/2_MB_ICG_dilution_series/spectrometer_ICG_5uMcorrected.mat');
+
+%corrected5microm = load('/media/gehrun01/work-io/flow-phantom/data/2_MB_ICG_dilution_series/spectrometer_ICG_5uMcorrected.mat')
 
 msotDefaultSpectra = load('/media/gehrun01/work-io/flow-phantom/data/spectra/MSOT_default_spectra.mat');
 %%
